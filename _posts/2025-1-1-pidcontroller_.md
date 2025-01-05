@@ -3,7 +3,7 @@ layout: post
 title: '控制器设计'
 subtitle: '或许是最漂亮的Jekyll主题'
 date: 2025-01-02
-categories: 实验4---PID控制器设计
+项目: 实验4---PID控制器设计
 cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-postcover.jpg'
 #tags: jekyll 前端开发 设计
 author: Dr.wang

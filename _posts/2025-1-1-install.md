@@ -3,7 +3,7 @@ layout: post
 title: '机器人装配指导书'
 subtitle: '或许是最漂亮的Jekyll主题'
 date: 2025-01-04
-categories: 实验1---机器人装配
+项目: 实验1---机器人装配
 cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-postcover.jpg'
 #tags: 组装 调试
 ---
