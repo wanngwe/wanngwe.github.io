@@ -5,7 +5,7 @@ subtitle: '或许是最漂亮的Jekyll主题'
 date: 2025-01-04
 categories: 实验1---机器人装配
 cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-postcover.jpg'
-tags: 组装 调试
+#tags: 组装 调试
 ---
 # 三轮小车的组装过程
 
