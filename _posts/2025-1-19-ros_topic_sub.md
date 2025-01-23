@@ -23,7 +23,7 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
  Publisher count: 1
  Subscription count: 0
  关于twist指令可以参考[twist官方解释](https://docs.ros.org/en/jazzy/p/geometry_msgs/interfaces/msg/Twist.html)
-![alt text](image.png)
+![alt text](/assets/images/image.png)
 
 ### 1.2 实验目标
 - **创建消息订阅者**：制作一个 ROS 节点，订阅 `/cmd_vel` 消息。
@@ -216,8 +216,8 @@ ament_target_dependencies(my_base rclcpp serial tf2_geometry_msgs)
 # 4.测试验证
 上述步骤正确，再打开终端，启动键盘节点，输入指令，则my_base节点会响应，
 如图所示：
-![alt text](image-1.png)
+![alt text](/assets/images/image-1.png)
 # 5.回调函数中完成代码整合
 如图所示，完成代码编写
-![alt text](image-2.png)
+![alt text](/assets/images/image-2.png)
 # 6.实现通过键盘操作小车的目的
