@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'ROS2话题订阅实验指导书(C++)'
+title: 'ROS2话题发布实验指导书(C++)'
 subtitle: '或许是最漂亮的Jekyll主题'
 date: 2025-02-19
 categories: 实验5---ROS话题实践
