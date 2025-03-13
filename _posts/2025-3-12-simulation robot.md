@@ -30,7 +30,7 @@ author: Dr.wang
 打开终端，输入以下指令：
 ```xml
 source install/setup.bash
-ros2 launch simulation.py
+ros2 launch omni_gazebo simulation.py
 ```
 出现如图所示界面
 ![alt text](/assets/images/16-12-46.png)
