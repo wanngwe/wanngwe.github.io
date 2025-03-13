@@ -35,11 +35,22 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ### 2.1创建包
 
-首先在 ~/ros2_ws/src 目录创建一个名为 my_base 的包：
-cd ~/ros2_ws/src 
+首先在/home/pi目录下创建一个文件夹，名称自拟，打开终端，输入如下指令
+```xml
+mkdir -p xxx/src
+cd xxx/src
+```
+其中xxx为自建文件夹
+ 在home/pi/xxx/src 目录创建一个名为 my_base 的包： 
+ ```xml
 ros2 pkg create --build-type ament_cmake my_base
+```
 ### 2.2编写订阅者节点代码
-新建一个CPP文件，命名为my_base.cpp,文件引用头文件bot_serial.h，该头文件中定义了下发指令的结构体和基本类
+新建一个cpp文件，命名为my_base.cpp,文件引用头文件bot_serial.h，
+my_base.cpp和bot_serial.h文件内容可以参考~/wangwei/src/my_base/src文件夹下的
+文件，当然你也可以直接复制过去。
+接下来分析相关文件的具体功能：
+该头文件中定义了下发指令的结构体和基本类
 ```c++
 #define SEND_DATA_CHECK   1         
 #define READ_DATA_CHECK   0          
@@ -206,10 +217,6 @@ find_package(serial REQUIRED)
 
 add_executable(my_base src/my_base.cpp)
 ament_target_dependencies(my_base rclcpp serial tf2_geometry_msgs)
-```
-然后在添加可执行文件需要编译的源文件，并命名为 talker或者其他你认为合适的名字
-```
-
 ```
 # 3.编译运行
 打开终端，执行如下命令：
