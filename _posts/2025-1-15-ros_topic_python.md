@@ -10,10 +10,26 @@ author: Dr.wang
 ---
 # 1.创建包
 
-首先在 ~/ros2_ws/src 目录创建一个名为pynode 的包：
-cd ~/ros2_ws/src 
+首先进入目录~/ros2_ws/src ，
+```xml
+cd ~/ros2_ws/src
+```
+如果没有这个目录，则先创建一个这样的目录，然后进入目录
+```xml
+mkdir -p ros2_ws/src
+cd ~/ros2_ws/src
+```
+创建一个名为pynode 的包：
+```
 ros2 pkg create --build-type ament_python pynode
+```
 # 2.编写发布者节点代码
+进入pynode文件夹，新建一个py_pub.py文件
+```xml
+cd pynode/pynode
+touch py_pub.py
+```
+
 新建一个py文件，命名为py_pub.py
 ```python
 import rclpy
@@ -46,24 +62,19 @@ if __name__ == '__main__':
 ```
 ## 2.1代码分析
 ## 2.2修改package.xml
-进入ros2_ws/src/pynode目录并打开package.xml，按照之前教程要求填写description ，maintainer和license.<u>如果你并不想开源你的代码，可以忽略此步。</u>
+进入ros2_ws/src/pynode目录并打开package.xml
 
-```xml
-  <description>TODO: Package description</description>
-  <maintainer email="pi@todo.todo">pi</maintainer>
-  <license>TODO: License declaration</license>
-```
-  在编译工具依赖ament_python后
   ```xml  
   <export>
     <build_type>ament_python</build_type>
   </export> 
   ```
-  添加下列依赖项：
+ ament_python后 添加下列依赖项：
 ```xml
  <exec_depend>rclpy</exec_depend>
  <exec_depend>std_msgs</exec_depend>
 ```
+
 改写完毕后注意记得保存文档!
 ## 2.3添加入口点
 接着打开 setup.py 文件，注意保持如下内容和 package一致
@@ -73,18 +84,29 @@ if __name__ == '__main__':
     license='TODO: License declaration',
 ```
 
-.把 entry_points 字段改为如下内容并保存，这样程序就知道要运行哪个函数了，即在运行 ros2 run py_pub talker 命令时，指向 py_pub.py_pub:main ：
+.把 entry_points 字段改为如下内容并保存，这样程序就知道要运行哪个函数了，即在运行 ros2 run pynode
+ talker 命令时，指向 pynode.py_pub:main ：
 
 ```xml
  entry_points={
         'console_scripts': [
-            'talker=py_pub.py_pub:main'
+            'talker=pynode.py_pub:main'
         ],
     },
 ```
 # 3.编写订阅者节点代码
 ## 3.1新建文件
-可以新建一个包，依照第二部分创建的方法操作（本节内容不进行展示）或者在上一节py_pub包的基础上操作，里新建一个py文件,命名为py_sub.py,并写入以下内容：
+可以新建一个包pynode2，依照第二部分创建的方法操作（本节内容不进行展示）
+```xml
+cd ~/ros2_ws/src
+ros2 pkg create --build-type ament_python pynode2
+```
+进入pynode2/pynode2创建文件
+```
+cd ~/ros2_ws/src/pynode2/pynode2
+touch py_sub.py
+```
+并写入以下内容：
 ```python
 import rclpy
 from rclpy.node import Node
@@ -115,12 +137,24 @@ if __name__ == '__main__':
 
 ```
 ## 3.2修改入口点
-因为订阅者和发布者所需的依赖相同，所以这里依然不需要要修改 package.xml ，只需打开 setup.py 文件，把 entry_points 字段改为如下内容并保存：
+- **修改 package.xml** ，
+  ```xml  
+  <export>
+    <build_type>ament_python</build_type>
+  </export> 
+  ```
+ ament_python后 添加下列依赖项：
+```xml
+ <exec_depend>rclpy</exec_depend>
+ <exec_depend>std_msgs</exec_depend>
+```
+- **修改setup.py**
+打开 setup.py 文件，把 entry_points 字段改为如下内容并保存：
 ```xml
    entry_points={
         'console_scripts': [
-            'talker=py_pub.py_pub:main',
-            'listener=py_pub.py_sub:main'
+            
+           'listener=pynode2.py_sub:main'
         ],
     },
 ```
