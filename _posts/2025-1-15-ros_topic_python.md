@@ -162,12 +162,14 @@ if __name__ == '__main__':
 ## 4.1同时打开两个终端，其中一个终端输入
 ```
 cd ~/ros2_ws
+colcon build
 source install/setup.bash
-ros2 run py_sub talker
+ros2 run pynode talker
 ```
 ## 4.2 另外一个终端输入
 ```
 cd ~/ros2_ws
+colcon build
 source install/setup.bash
-ros2 run py_sub listener
+ros2 run pynode2 listener
 ```
