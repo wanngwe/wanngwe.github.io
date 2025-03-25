@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 'urdf'
+title: '机器人模型显示'
 subtitle: '或许是最漂亮的Jekyll主题'
-date: 2025-03-26
+date: 2025-03-14
 categories: 传感器
 cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-postcover.jpg'
 #tags: jekyll 前端开发 设计
