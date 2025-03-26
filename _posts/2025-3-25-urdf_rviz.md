@@ -3,7 +3,7 @@ layout: post
 title: '机器人模型URDF'
 subtitle: '或许是最漂亮的Jekyll主题'
 date: 2025-03-25
-categories: 传感器
+categories: 仿真
 cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-postcover.jpg'
 #tags: jekyll 前端开发 设计
 author: Dr.wang
