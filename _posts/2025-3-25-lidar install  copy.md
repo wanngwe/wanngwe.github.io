@@ -12,22 +12,15 @@ author: Dr.wang
 激光雷达作为机器人重要的传感器，在建图导航等领域具有重要作用
 ## 1.升级树莓派相关配置
 
-- **更新资源包**
-参考学习通--工具资料--2025-3-27-树莓派系统更新.pdf文件，根据教程完成系统更新
-## 2.代码验证
-- **拷贝雷达驱动**
-首先下载雷达驱动，位于学习通--工具资料--雷达ros2驱动包，拷贝到树莓派，解压到工程目录src下（如果你之前创建的工程名称为XXX,则拷贝到XXX/src,和my_base同级目录）
-![alt text](/assets/images/lidar-1.png)
-- **查看雷达驱动串口号**
-```xml
-ls /dev/ttyA*
-sudo chmod 777 /dev/ttyA*
-```
-观察雷达驱动使用的串口号，（下一步需要使用）
-- **编译**
-打开终端，输入以下指令：
-```xml
-colcon build
-```
-
 ## 1.创建功能包
+- **创建空间（已有该空间可以跳过）**
+```xml
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
+```
+- **创建包**
+```xml
+cd ~/ros2_ws/src
+ros2 pkg create --build-type ament_cmake imu_robot_display \
+--dependencies rclcpp robot_state_publisher urdf rviz2
+```
