@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot name="simple_robot">
+
+  <!-- 基础底座 -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.5 0.3 0.1"/>  <!-- 长宽高 -->
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>  <!-- 红色 -->
+      </material>
+    </visual>
+    
+    <inertial>
+      <mass value="1.0"/>  <!-- 质量1kg -->
+      <inertia 
+        ixx="0.001" ixy="0.0" ixz="0.0"
+        iyy="0.001" iyz="0.0"
+        izz="0.001"/>  <!-- 简化惯性矩阵 -->
+    </inertial>
+  </link>
+
+  <!-- IMU设备 -->
+  <link name="imu_link">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.02"/>  <!-- 更小的尺寸 -->
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/>  <!-- 绿色 -->
+      </material>
+    </visual>
+
+    <inertial>
+      <mass value="0.1"/>  <!-- 较轻的质量 -->
+      <inertia 
+        ixx="0.00001" ixy="0.0" ixz="0.0"
+        iyy="0.00001" iyz="0.0"
+        izz="0.00001"/>
+    </inertial>
+  </link>
+
+  <!-- 将IMU固定在底座上 -->
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin 
+      xyz="0.0 0.0 0.06"  
+      rpy="0 0 0"/>         <!-- 无旋转 -->
+  </joint> 
+</robot>
