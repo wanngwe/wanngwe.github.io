@@ -8,8 +8,8 @@ cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-postcover.jpg'
 #tags: jekyll 前端开发 设计
 author: Dr.wang
 ---
-# <center>雷达部署教程
-激光雷达作为机器人重要的传感器，在建图导航等领域具有重要作用
+# <center>rviz2显示机器人模型教程
+rviz2是一个重要的话题查看工具，可以显示设计的机器人模型，本实验向导阐明具体步骤
 ## 1.升级树莓派相关配置
 
 ## 1.创建功能包
