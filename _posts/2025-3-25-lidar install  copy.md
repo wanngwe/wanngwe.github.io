@@ -33,7 +33,7 @@ mkdir -p urdf launch rviz
 ```xml
 touch urdf/imu_robot.urdf
 ```
-编辑文件输入以下内容
+编辑文件
 [查看完整URDF文件](/assets/file/robot.urdf)
 
 - **创建启动文件**
@@ -74,7 +74,7 @@ install(
   DIRECTORY urdf lanuch
   DESTINATION share/${PROJECT_NAME}
 )
-
+```
 - **编译**
 进入空间
 ```xml
