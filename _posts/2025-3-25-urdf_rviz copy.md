@@ -8,7 +8,7 @@ cover: 'http://on2171g4d.bkt.clouddn.com/jekyll-theme-h2o-postcover.jpg'
 #tags: jekyll 前端开发 设计
 author: Dr.wang
 ---
-# <center>rviz2显示机器人模型教程
+# <center>自主设计实训
 AI是一个非常重要的工具，本课程的主要目的在于机器人知识的理解，并不在于编程，故大部分的编程任务我们交给AI完成。以下为三个可以选择的任务，<u>**任选其中一个**</u>:
 - **任务1：小车前进1m,后退1m,如此反复**
 - **任务2：小车绘制圆形**
